@@ -443,7 +443,7 @@ class MCEDataHandler():
         
         body += '<table class="table table-bordered table-striped table-condensed">'
         body += '<tr><td>Blocks</td><td><a href="' + chain.config['path-name'] + '/blocks">' + str(response['result']['blocks']) +  '</a>'+' <a href="' + chain.config['path-name'] + '/miners">(view miners)</a></td></tr>'
-        body += vars(response['result'])
+        body += str(response['result'])
         tx_count=field_in_dict(response['result'],'transactions','?')
         if tx_count == '?':
             body += '<tr><td>Transactions</td><td>' + str(tx_count) +  '</td></tr>'
